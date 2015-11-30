@@ -1,0 +1,76 @@
+@charset "utf-8";
+/* CSS Document */
+#menu a {	
+	display:inline-block;
+	width:100px;
+	height:100px;
+}
+.inactivo {
+	border:4px solid #FFF;
+	opacity:1;
+}
+.activo {
+	border:4px solid #f00;
+	opacity:0.5;
+}
+.supercaja {
+	position: relative;
+	width: 400px;
+	height: 450px;
+	margin-right: auto;
+	margin-left: auto;
+	padding-left: 50px;
+	padding-right: 50px;
+	
+}
+.supercaja .caja {
+	position: absolute;
+	top: 0px;
+	left: 50px;
+	clip: rect(0px 400px 450px 0px);
+	width: 400px;
+	height: 450px;
+}
+.supercaja #izq {
+	position: absolute;
+	color: #FF0000;
+	font-size: 3em;
+	z-index: 1000;
+	text-decoration: none;
+	top: 205px;
+	left: 0px;
+	text-align: center;
+}
+.supercaja #dcha {
+	position: absolute;
+	color: #FF0000;
+	font-size: 3em;
+	z-index: 1000;
+	text-decoration: none;
+	top: 205px;
+	right: 0px;
+	z-index: 1001;
+}
+#menu {
+	width: 550px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 10px;
+}
+
+.supercaja .caja #autor {
+	width: 400px;
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	background-color: rgba(255,255,255,0.5);
+	text-align: center;
+	opacity: 0;
+	transition: all 1s;
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.caja:hover > #autor {
+	opacity:1;
+	}

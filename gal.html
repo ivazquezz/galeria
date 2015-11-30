@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Galería</title>
+
+<link href="estilo_gal.css" rel="stylesheet" type="text/css">
+<script>
+var x = 0;
+var a = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg"];
+var b = ["Khalo", "Van Gogh", "Rembrandt", "Picasso", "Durero"];
+var c;
+
+function empezar(){	
+	c=document.querySelectorAll("#menu a");
+	limpia()
+    c[0].className = "activo";
+}
+function limpia (){
+	c[0].className = "inactivo";
+	c[1].className = "inactivo";
+	c[2].className = "inactivo";
+	c[3].className = "inactivo";
+	c[4].className = "inactivo";
+}
+function avanzar(){
+	if(x<a.length-1){
+		x = x+1
+	}else{
+		x=0
+	}
+	
+	foto.src = a[x]
+	autor.innerHTML = b[x]
+	limpia();
+	c[x].className = "activo";
+	
+	}
+function retroceder(){
+	if(x>0){
+		x = x-1
+	}else{
+		x=a.length-1
+	}
+	foto.src = a[x]
+	autor.innerHTML = b[x]
+	limpia();
+	c[x].className = "activo";
+}
+function galeria(nombre){
+	x = nombre
+	foto.src = a[x]
+	autor.innerHTML = b[x]
+	limpia()
+	c[x].className = "activo";
+
+	}
+</script>
+</head>
+
+<body onLoad="empezar()">
+
+
+<div class="supercaja">
+
+<a id="izq" href="#" onClick="retroceder()">&lt;</a> | 
+<a id="dcha" href="#" onClick="avanzar()">&gt;</a> 
+
+  <div class="caja">
+    <img onClick="avanzar()" id="foto" src="1.jpg" /> 
+    <div id="autor">Frida Khalo</div>
+  </div>
+</div>
+<div id="menu"><a href="#" onClick="galeria(0)" class="activo"><img src="thumb/1.jpg" width="100" height="100"></a><a href="#" onClick="galeria(1)"><img src="thumb/2.jpg" width="100" height="100"></a><a href="#" onClick="galeria(2)"><img src="thumb/3.jpg" width="100" height="100"></a><a href="#" onClick="galeria(3)"><img src="thumb/4.jpg" width="100" height="100"></a><a href="#" onClick="galeria(4)"><img src="thumb/5.jpg" width="100" height="100"></a></div>
+
+
+</body>
+</html>
